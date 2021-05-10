@@ -6,15 +6,15 @@ form.addEventListener('submit', (e) => e.preventDefault(getValue()))
 
 function getValue() {
     const val = document.querySelector('input').value
-    console.log(val)
+    getMovies(val)
 }
 
 function getMovies(title){
     console.log(title);
     fetch('http://www.omdbapi.com/?s='+title+'&apikey=3c28a15d')
     .then(res => res.json( ))
-    .then(movies => console.log(movies))
-    // .then(movies => movies.forEach(movie => {
+    .then(movies => console.log(movies.Search))
+    // .then(movies => movies.each(movie => {
     //     console.log(movie)
     // }))
 }
