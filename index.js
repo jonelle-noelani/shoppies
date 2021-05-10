@@ -1,20 +1,16 @@
-const OMDb = "http://www.omdbapi.com/?i=tt3896198&apikey=3c28a15d"
-const OMDb2 = "http://www.omdbapi.com/?s=inception&apikey=3c28a15d"
+// const OMDb = "http://www.omdbapi.com/?i=tt3896198&apikey=3c28a15d"
+// const OMDb2 = "http://www.omdbapi.com/?s=inception&apikey=3c28a15d"
 
-const body = document.querySelector('body')
-const p1 = document.createElement('p')
+let form = document.querySelector('form')
+form.addEventListener('submit', (e) => e.preventDefault(getValue()))
 
-testThis("hello")
-
-function testThis(words){
-    p1.innerHTML = words
-    body.appendChild(p1)
+function getValue() {
+    const val = document.querySelector('input').value
+    console.log(val)
 }
 
-getMovies('inception')
-
 function getMovies(title){
-    console.log("hello");
+    console.log(title);
     fetch('http://www.omdbapi.com/?s='+title+'&apikey=3c28a15d')
     .then(res => res.json( ))
     .then(movies => console.log(movies))
