@@ -16,12 +16,19 @@ function getMovies(title){
     // .then(movies => console.log(movies.Search))
     .then(movies => (movies.Search.map(movie => {
         if (movie['Type'] === "movie") {
-            console.log(movie)
+            displayMovie(movie)
         }
     })))
 }
 
-function displayMovies(movie) {
+function displayMovie(movie) {
     const searchDiv = document.getElementById('search')
-    const movieList = document.createElement('div')
+    const movieCard = document.createElement('div')
+    movieCard.className = "movieCard"
+
+    let h4 = document.createElement('h4')
+    h4.textContent = movie['Title']
+
+    movieCard.append(h4)
+    searchDiv.append(movieCard)
 }
