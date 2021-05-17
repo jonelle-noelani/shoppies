@@ -15,10 +15,13 @@ function getMovies(title){
     .then(res => res.json( ))
     // .then(movies => console.log(movies.Search))
     .then(movies => (movies.Search.map(movie => {
-        console.log(movie)
+        if (movie['Type'] === "movie") {
+            console.log(movie)
+        }
     })))
 }
 
 function displayMovies(movie) {
-
+    const searchDiv = document.getElementById('search')
+    const movieList = document.createElement('div')
 }
