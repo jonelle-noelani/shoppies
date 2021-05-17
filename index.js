@@ -29,6 +29,9 @@ function displayMovie(movie) {
     let h4 = document.createElement('h4')
     h4.textContent = movie['Title']
 
-    movieCard.append(h4)
+    let p = document.createElement('p')
+    p.textContent = movie['Year']
+
+    movieCard.append(h4, p)
     searchDiv.append(movieCard)
 }
