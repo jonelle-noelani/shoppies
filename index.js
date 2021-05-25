@@ -38,5 +38,11 @@ function displayMovie(movie) {
     const nomBtn = document.createElement('button')
     nomBtn.innerText = 'Nominate'
     movieCard.append(nomBtn)
-    nomBtn.addEventListener('click', (e) => e.preventDefault(console.log(movie)))
+    nomBtn.addEventListener('click', (e) => e.preventDefault(nomination(movieCard, searchDiv)))
+}
+
+function nomination(movieCard, searchDiv) {
+    const nomList = document.createElement('div')
+    nomList.append(movieCard)
+    searchDiv.append(nomList)
 }
