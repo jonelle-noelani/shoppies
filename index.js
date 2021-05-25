@@ -34,4 +34,9 @@ function displayMovie(movie) {
 
     movieCard.append(h4, p)
     searchDiv.append(movieCard)
+    //
+    const nomBtn = document.createElement('button')
+    nomBtn.innerText = 'Nominate'
+    movieCard.append(nomBtn)
+    nomBtn.addEventListener('click', (e) => e.preventDefault(console.log(movie)))
 }
